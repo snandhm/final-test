@@ -4,15 +4,15 @@
 
 int main(void) {
 	int x;	
-
-        while ( ! stack_is_full() ) {
+ stack_init(&st, 5);
+        while ( ! stack_full(&st) ) {
 		scanf("%d", &x);
-		stack_push(x);
+		stack_push(&st,x);
 	}
 	
 
-	while ( !stack_is_empty() ) {
-		x = stack_pop();
+	while ( !stack_empty(&st) ) {
+		x = stack_pop(&st);
 
 		printf("%d\t", x);
 	}
